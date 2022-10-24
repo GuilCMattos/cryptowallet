@@ -5,20 +5,6 @@
 
 <p> A data de hoje é <%= data_br(Date.today)%> </p>
 
-<ul>
-
-    <li>  
-        <a href="/coins"> Cadastro de moedas</a>
-    </li>
-
-    <li>
-        <%= link_to "Cadastro de moedas", coins_path %>
-    </li>
-
-    <li>
-    <%= @nome%>
-    </li>
-
- </ul>
+<%= render "menu" %>
 
 <p> Você está em <%= ambiente_rails %> </p>
