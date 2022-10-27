@@ -6,8 +6,9 @@ namespace :dev do
     show_spinner("Apagando banco de dados...", "Concluído com sucesso!") {%x(rails db:drop)}
     show_spinner("Criando banco de dados...", "Concluído com sucesso!") {%x(rails db:create) }
     show_spinner("Migrando banco de dados...", "Concluído com sucesso!") {%x(rails db:migrate) }
+    %x(rails dev:add_mining_type) 
      %x(rails dev:add_coins) 
-     %x(rails dev:add_mining_type) 
+     
 
     else 
       puts "Você não está em desenvolvimento"
@@ -20,13 +21,15 @@ namespace :dev do
     coins = [  {
       description: "Bitcoin",
       acronym: "BTC",
-      url_image: "https://static.vecteezy.com/system/resources/previews/008/505/801/original/bitcoin-logo-color-illustration-png.png"
+      url_image: "https://static.vecteezy.com/system/resources/previews/008/505/801/original/bitcoin-logo-color-illustration-png.png",
+      mining_type: MiningType.where(acronym: 'PoW').first
       },
   
       {
       description: "Ethereum",
       acronym: "ETH",
-      url_image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Ethereum_logo_2014.svg/1257px-Ethereum_logo_2014.svg.png"
+      url_image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Ethereum_logo_2014.svg/1257px-Ethereum_logo_2014.svg.png",
+      mining_type: MiningType.all.sample
       }]
   
       coins.each do |coin| 
