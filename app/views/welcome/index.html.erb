@@ -1,9 +1,10 @@
 <h1>Seja bem vindo</h1>
+<p>A lingua usada na aplicação é: <%= locale(I18n.locale )%> </p>
 <p>Find me in app/views/welcome/index.html.erb</p>
 
 <p> Seu nome ao contrário é: <%= "Jackson".reverse %> </p>
 
-<p> A data de hoje é <%= data_br(Date.today)%> </p>
+<p> A data de hoje é <%= Date.today %> </p>
 
 <%= render "menu" %>
 
