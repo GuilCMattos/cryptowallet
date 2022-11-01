@@ -38,8 +38,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 gem "pry-rails"
 gem "tty-spinner"
-gem 'rails-assets-jquery', source: 'https://rails-assets.org'
-gem 'rails-assets-notifyjs', source: 'https://rails-assets.org'
+
 
 
 group :development, :test do
