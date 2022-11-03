@@ -1,23 +1,13 @@
-<p> 
-    <%= link_to 'Português', '/?locale=pt-BR' %>
-
-</p>
-
-<p> 
-    <%= link_to 'English', '/?locale=en' %>
-
-</p>
-
-<h1>Seja bem vindo</h1>
-<p>A lingua usada na aplicação é: <%= t("actual_locale") %> </p>
+<div class="jumbotron">
+  <h1 class="display-4"><%= t('hello') %> </h1>
+  <p class="lead">Esse é o Crypto Wallet, um app para você cadastrar e acompanhar suas coins</p>
+  <hr class="my-4">
+  <p>Para começar, selecione uma das opções abaixo</p>
+  
+  <%= render "menu" %>
+  
+</div>
 
 
-<p> <%= t('hello') %> </p>
 
-<p> Seu nome ao contrário é: <%= "Jackson".reverse %> </p>
 
-<p> A data de hoje é <%= Date.today %> </p>
-
-<%= render "menu" %>
-
-<p> Você está em <%= ambiente_rails %> </p>
